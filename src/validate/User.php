@@ -1,6 +1,6 @@
 <?php
-namespace Hahadu\CooleAdmin\validate;
-use Hahadu\CooleAdmin\validate\UsersValidate;
+namespace Hahadu\ImAdminThink\validate;
+use Hahadu\ImAdminThink\validate\UsersValidate;
 
 class User extends UsersValidate
 {

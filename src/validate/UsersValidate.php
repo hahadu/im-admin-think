@@ -1,5 +1,5 @@
 <?php
-namespace Hahadu\CooleAdmin\validate;
+namespace Hahadu\ImAdminThink\validate;
 
 use think\Validate;
 

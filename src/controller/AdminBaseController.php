@@ -15,8 +15,8 @@
  *  +----------------------------------------------------------------------
  **/
 
-namespace Hahadu\CooleAdmin\controller;
-use Hahadu\CooleAdmin\model\AdminNav;
+namespace Hahadu\ImAdminThink\controller;
+use Hahadu\ImAdminThink\model\AdminNav;
 use think\App;
 use think\facade\Config;
 use think\facade\Db;

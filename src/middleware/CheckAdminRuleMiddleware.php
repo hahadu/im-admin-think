@@ -1,5 +1,5 @@
 <?php
-namespace Hahadu\CooleAdmin\middleware;
+namespace Hahadu\ImAdminThink\middleware;
 use Hahadu\ThinkAuth\Auth;
 use think\facade\Request;
 

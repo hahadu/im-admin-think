@@ -15,7 +15,7 @@
  *  +----------------------------------------------------------------------
  **/
 
-namespace Hahadu\CooleAdmin\controller;
+namespace Hahadu\ImAdminThink\controller;
 
 
 use think\App;

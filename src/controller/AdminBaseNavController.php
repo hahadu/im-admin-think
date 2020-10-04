@@ -15,9 +15,9 @@
  *  +----------------------------------------------------------------------
  **/
 
-namespace Hahadu\CooleAdmin\controller;
+namespace Hahadu\ImAdminThink\controller;
 
-use Hahadu\CooleAdmin\model\AdminNav;
+use Hahadu\ImAdminThink\model\AdminNav;
 use think\App;
 
 class AdminBaseNavController extends AdminBaseController

@@ -15,7 +15,7 @@
  *  +----------------------------------------------------------------------
  **/
 
-namespace Hahadu\CooleAdmin\model;
+namespace Hahadu\ImAdminThink\model;
 use Hahadu\ThinkBaseModel\BaseModel;
 
 class UserBaseModel extends BaseModel{

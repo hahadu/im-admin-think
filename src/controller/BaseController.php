@@ -15,14 +15,14 @@
  *  +----------------------------------------------------------------------
  **/
 
-namespace Hahadu\CooleAdmin\controller;
+namespace Hahadu\ImAdminThink\controller;
 
 use think\App;
 use think\exception\ValidateException;
 use think\facade\Request;
 use think\Validate;
-use Hahadu\CooleAdmin\middleware\CheckAdminRuleMiddleware;
-use Hahadu\CooleAdmin\middleware\CheckUserLoginMiddleware;
+use Hahadu\ImAdminThink\middleware\CheckAdminRuleMiddleware;
+use Hahadu\ImAdminThink\middleware\CheckUserLoginMiddleware;
 use think\middleware\SessionInit;
 
 

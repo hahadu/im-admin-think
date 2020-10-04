@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Hahadu\CooleAdmin\model;
+namespace Hahadu\ImAdminThink\model;
 use Hahadu\ThinkBaseModel\BaseModel;
-use Hahadu\CooleAdmin\model\AuthGroupAccess;
+use Hahadu\ImAdminThink\model\AuthGroupAccess;
 //use think\Model;
 
 /**

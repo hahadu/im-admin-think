@@ -15,7 +15,7 @@
  *  +----------------------------------------------------------------------
  **/
 
-namespace Hahadu\CooleAdmin\middleware;
+namespace Hahadu\ImAdminThink\middleware;
 use think\facade\Session;
 use Hahadu\ThinkJumpPage\JumpPage;
 
