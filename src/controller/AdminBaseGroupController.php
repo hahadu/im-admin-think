@@ -9,7 +9,7 @@
  *  +----------------------------------------------------------------------
  *  | Author: hahadu <582167246@qq.com>
  *  +----------------------------------------------------------------------
- *  | Date: 2020/10/3 上午1:16
+ *  | Date: 2020/10/5 下午3:24
  *  +----------------------------------------------------------------------
  *  | Description:   cooleAdmin
  *  +----------------------------------------------------------------------
@@ -24,13 +24,14 @@ use Hahadu\ImAdminThink\model\AuthRule;
 use Hahadu\ImAdminThink\model\Users;
 use think\App;
 
-class AdminBaseRuleController extends AdminBaseController
+class AdminBaseGroupController extends AdminBaseController
 {
     private $auth_rule;
     private $auth_group;
     private $auth_group_access;
-    private $Users;
-
+    private $jumpUrlRule = 'admin/rule/index';
+    private $jumpGroup   = 'admin/rule/group';
+    private $jumpUrlUserList = 'admin/rule/admin_user_list';
     public function __construct(App $app)
     {
         parent::__construct($app);
@@ -40,74 +41,29 @@ class AdminBaseRuleController extends AdminBaseController
         $this->Users = new Users();
 
     }
-
-    /****
-     * 显示菜单列表
-     * @return Array
+    /**
+     * 用户组列表
      */
-    public function get_tree_nav()
-    {
-        $data=$this->auth_rule->getTreeData('tree','id','title');
-        $assign=array(
+    public function base_group_list(){
+        $data=$this->auth_group->select();
+        $result =array(
             'data'=>$data,
-            'page_title' => '权限列表',
         );
-        return  $assign;
-    }
-    /**
-     * 添加权限
-     */
-    public function add(){
-        if(request()->isPost()){
-            $data=request()->post();
-            $result=$this->auth_rule->addData($data);
-            return $result;
-        }
-    }
-    /**
-     * 修改权限
-     */
-    public function edit(){
-        if(request()->isPost()){
-            $data=request()->post();
-            $map=array(
-                'id'=>$data['id']
-            );
-            $result=$this->auth_rule->editData($map,$data);
-            return $result;
-        }
-    }
-    /**
-     * 删除权限
-     */
-    public function delete($id){
-        $map=array(
-            'id'=>$id
-        );
-        $result=$this->auth_rule->deleteData($map,false); //软删除
         return $result;
     }
-    /****
-     * 列出已删除的权限
-     */
-    public function on_delete_rule(){
 
-        $data = $this->auth_rule->selectDelData();
-        $result = [
-            'group' =>$data,
-        ];
-        return $result;
-    }
-    /****
-     * 恢复已删除的权限
-     * @param $id
-     * @return string
+    /**
+     * 添加用户组
      */
-    public function rec_delete_rule($id){
-        $map = ['id'=>$id];
-        return $this->auth_rule->recDelete($map);
-    }
+    public function base_add_group(){
+        if(request()->isPost()){
+            $data = request()->post();
+            unset($data['id']);
+            $result=$this->auth_group->addData($data);
+            return $result;
+        }
 
+    }
 
 
 }

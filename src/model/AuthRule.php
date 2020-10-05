@@ -3,6 +3,7 @@ declare (strict_types = 1);
 
 namespace Hahadu\ImAdminThink\model;
 use Hahadu\ThinkBaseModel\BaseModel;
+use think\model\concern\SoftDelete;
 
 
 /**
@@ -10,6 +11,10 @@ use Hahadu\ThinkBaseModel\BaseModel;
  */
 class AuthRule extends BaseModel
 {
+    use SoftDelete;
+    protected $deleteTime = 'delete_time';
+    protected $defaultSoftDelete = NULL;
+
     /**
      * 删除数据
      * @param   array   $map    where语句数组形式

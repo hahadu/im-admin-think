@@ -32,19 +32,5 @@ class AuthGroup extends BaseModel
     }
 
 
-    /*
-    public function deleteData($map){
-        $result=$this->where($map)->delete();
-        if ($result) {
-            $group_map=array(
-                'group_id'=>$map['id']
-            );
-            $auth_group_access = new AuthGroupAccess();
-            // 删除关联表中的组数据
-            $result=$auth_group_access::deleteData($group_map);
-        }
-        return true;
-    }
-    */
 
 }
