@@ -34,6 +34,7 @@ class AuthGroupAccess extends BaseModel
             ->toArray();
 
         // 获取第一条数据
+        if(!isset($data[0])) return false;
         $first=$data[0];
         $first['title']=array();
         $user_data[$first['id']]=$first;

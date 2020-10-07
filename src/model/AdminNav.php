@@ -67,7 +67,7 @@ class AdminNav extends BaseModel
      * @param string $type tree获取树形结构 level获取层级结构
      * @return array        结构数据
      */
-    /*
+    /**
     public function getTreeData($type = 'tree', $order = '', $name = 'name', $child = 'id', $parent = 'pid')
     {
         // 判断是否需要排序
@@ -78,17 +78,19 @@ class AdminNav extends BaseModel
         }
 
     }
-    /**
+     * */
 
+/*
         public function getTreeData($type = 'tree', $order = '', $name = 'name', $child = 'id', $parent = 'pid')
         {
 
                 // 判断是否需要排序
                 if (empty($order)) {
-                    $data = $this->select();
+                    $data = $this->select()->toArray();
                 } else {
-                    $data = $this->order('order_by is null,' . $order)->select();
+                    $data = $this->order('order_by is null,' . $order)->select()->toArray();
                 }
+                //dump($data->toArray());
                 // 获取树形或者结构数据
                 if ($type == 'tree') {
                     $data = Data::tree($data, 'name', 'id', 'pid');
@@ -97,9 +99,11 @@ class AdminNav extends BaseModel
                     // 显示有权限的菜单
                     $auth = new Auth();
                     foreach ($data as $k => $v) {
-                        if ($auth->check($v['mca'], Session::get('user.id'))) {
-                            foreach ($v['_data'] as $m => $n) {
-                                if (!$auth->check($n['mca'], Session::get('user.id'))) {
+                        dump($v['url']);
+                        dump($auth->check($v['url'], Session::get('user.id')));
+                        if ($auth->check($v['url'], Session::get('user.id'))) {
+                            foreach ($v['_child'] as $m => $n) {
+                                if (!$auth->check($n['url'], Session::get('user.id'))) {
                                     unset($data[$k]['_child'][$m]);
                                 }
                             }
@@ -109,9 +113,10 @@ class AdminNav extends BaseModel
                         }
                     }
                 }
+                dump($data);
                 // p($data);die;
                 return $data;
             }
-*/
 
+*/
 }

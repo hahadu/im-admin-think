@@ -1,0 +1,57 @@
+{
+    "name": "hahadu/im-admin-think",
+    "description": "the new thinkphp framework",
+    "type": "project",
+    "keywords": [
+        "framework",
+        "thinkphp",
+        "admin"
+    ],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "hahadu",
+            "email": "582167246@qq.com"
+        }        
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "topthink/framework": "^6.0.0",
+        "topthink/think-orm": "^2.0",
+        "topthink/think-multi-app": "^1.0",
+        "topthink/think-view": "^1.0",
+        "topthink/think-captcha": "^3.0",
+        "hahadu/data-handle": "v1.0.2.0",
+        "hahadu/think-basemodel": "v1.0.0.2",
+        "hahadu/think-auth": "^1.0",
+        "hahadu/think-jump-class": "^2.0",
+        "hahadu/helper-function": "^0.2.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.2",
+        "topthink/think-trace":"^1.0"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app"
+        },
+        "psr-0": {
+            "": "extend/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hahadu\\CopyProduct\\": "hahadu/copy-product/src/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php think service:discover",
+            "@php think vendor:publish"
+        ]
+    }
+}

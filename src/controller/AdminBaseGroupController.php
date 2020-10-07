@@ -39,7 +39,6 @@ class AdminBaseGroupController extends AdminBaseController
         $this->auth_group = new AuthGroup();
         $this->auth_group_access = new AuthGroupAccess();
         $this->Users = new Users();
-
     }
     /**
      * 用户组列表
@@ -64,6 +63,57 @@ class AdminBaseGroupController extends AdminBaseController
         }
 
     }
+
+    /**
+     * 修改用户组
+     */
+    public function base_edit_group(){
+        if(request()->isPost()){
+            $data = request()->post();
+            $map=array(
+                'id'=>$data['id']
+            );
+            $result=$this->auth_group->editData($map,$data);
+            return $result;
+        }
+    }
+
+    /**
+     * 删除用户组
+     */
+    public function base_delete_group($id){
+        $result=$this->auth_group->deleteData($id);
+        if ($result) {
+            return 100013;
+        }else{
+            return 400011;
+        }
+    }
+
+    /****
+     * 列出已停用的组
+     */
+    public function on_delete_group(){
+        $data = $this->auth_group->selectDelData();
+        $result = [
+            'group' =>$data,
+        ];
+        return $result;
+
+    }
+
+    /****
+     * 恢复已删除的管理组
+     * @param $id
+     * @return string
+     */
+    public function rec_delete_group($id){
+        $map = ['id'=>$id];
+        $result = $this->auth_group->recDelete($map);
+        return $result;
+    }
+
+
 
 
 }
