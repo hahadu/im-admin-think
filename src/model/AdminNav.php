@@ -80,7 +80,7 @@ class AdminNav extends BaseModel
     }
      * */
 
-/*
+
         public function getTreeData($type = 'tree', $order = '', $name = 'name', $child = 'id', $parent = 'pid')
         {
 
@@ -99,8 +99,6 @@ class AdminNav extends BaseModel
                     // 显示有权限的菜单
                     $auth = new Auth();
                     foreach ($data as $k => $v) {
-                        dump($v['url']);
-                        dump($auth->check($v['url'], Session::get('user.id')));
                         if ($auth->check($v['url'], Session::get('user.id'))) {
                             foreach ($v['_child'] as $m => $n) {
                                 if (!$auth->check($n['url'], Session::get('user.id'))) {
@@ -113,10 +111,6 @@ class AdminNav extends BaseModel
                         }
                     }
                 }
-                dump($data);
-                // p($data);die;
                 return $data;
             }
-
-*/
 }

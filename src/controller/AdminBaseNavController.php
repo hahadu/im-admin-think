@@ -110,7 +110,7 @@ class AdminBaseNavController extends AdminBaseController
             $data=$this->request->post();
             $add_data=$this->adminNav->addData($data);
             if($add_data>0){
-                $result= 100012;
+                $result = 100012;
             }else{
                 $result = 200001;
             }

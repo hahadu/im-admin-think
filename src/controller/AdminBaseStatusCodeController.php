@@ -76,6 +76,12 @@ class AdminBaseStatusCodeController extends AdminBaseController
             return $result;
         }
     }
+
+    /****
+     * 删除状态码 *默认为软删除
+     * @param $id
+     * @return bool|int
+     */
     public function delete_status_code($id)
     {
         if(request()->isGet()){
@@ -84,13 +90,9 @@ class AdminBaseStatusCodeController extends AdminBaseController
             return $delete_status;
         }
     }
-
-
-
-
     /****
      * 显示已删除的数据
-     * @return \think\response\View
+     * @return array
      */
     public function on_delete(){
         $data = $this->status_code_data->selectDelData();

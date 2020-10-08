@@ -18,8 +18,8 @@ class AuthGroupAccess extends BaseModel
      */
     public function getUidsByGroupId($group_id){
         $user_ids=$this
-            ->where(array('group_id'=>$group_id))
-            ->getField('uid',true);
+            ->where(['group_id'=>$group_id])
+            ->column('uid');
         return $user_ids;
     }
     /**
@@ -36,7 +36,7 @@ class AuthGroupAccess extends BaseModel
         // 获取第一条数据
         if(!isset($data[0])) return false;
         $first=$data[0];
-        $first['title']=array();
+        $first['title']=[];
         $user_data[$first['id']]=$first;
         // 组合数组
         foreach ($data as $k => $v) {

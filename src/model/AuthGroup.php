@@ -4,10 +4,10 @@ declare (strict_types = 1);
 namespace Hahadu\ImAdminThink\model;
 use Hahadu\ThinkBaseModel\BaseModel;
 use Hahadu\ImAdminThink\model\AuthGroupAccess;
-//use think\Model;
 
-/**
- * @mixin \think\Model
+/****
+ * Class AuthGroup
+ * @package Hahadu\ImAdminThink\model
  */
 class AuthGroup extends BaseModel
 {
@@ -30,7 +30,4 @@ class AuthGroup extends BaseModel
         }
         return $result;
     }
-
-
-
 }

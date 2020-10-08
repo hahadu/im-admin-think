@@ -2,6 +2,7 @@
 namespace Hahadu\ImAdminThink\middleware;
 use Hahadu\ThinkAuth\Auth;
 use think\facade\Request;
+use think\facade\Session;
 
 /****
  * Class CheckAdminRuleMiddleware
@@ -21,8 +22,9 @@ class CheckAdminRuleMiddleware
         $controller_name = parse_name(Request::controller()); //控制名
         $action_name = parse_name(Request::action());   //操作名
         $rule_url = $root_name .'/'. $controller_name .'/'. $action_name;
-        $check_result = $auth->check($rule_url,get_uid());
+        $check_result = $auth->check($rule_url,Session::get('user.id'));
         if(!$check_result){
+
             jumpPag(300001,'/index')->send();
         }
         return $next($request);
