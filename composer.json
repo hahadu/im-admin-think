@@ -39,7 +39,7 @@
     "extra": {
         "think": {
             "app": {
-                "admin*": "test/app/admin/*"
+                "admin*": "test/app/admin*"
             }
         }
     }
