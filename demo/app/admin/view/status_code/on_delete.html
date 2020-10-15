@@ -31,7 +31,7 @@
                         <tr>
                             <td style="width:40px;height: 15px;">{$vo.status}</td>
                             <td> {:$vo.code} </td>
-                            <td> {:$vo.describe} </td>
+                            <td> {:$vo.message} </td>
                             <td>
                                 <a href="javascript:if(confirm('确定恢复？'))location='{:url('/admin/status_code/rec_delete',['id'=>$vo.id])}'"><span class="badge bg-warning">恢复</span></a>
                             </td>

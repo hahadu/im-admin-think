@@ -27,7 +27,6 @@ class IndexController extends AdminBaseController
     }
     public function index()
     {
-        dump(status_code(100011));
         View::assign('title','后台首页');
         return view('index/index_adminLte');
     }
