@@ -18,6 +18,7 @@
 namespace Hahadu\ImAdminThink\controller;
 
 
+use Hahadu\Helper\StringHelper;
 use Hahadu\ImAdminThink\model\AuthGroup;
 use Hahadu\ImAdminThink\model\AuthGroupAccess;
 use Hahadu\ImAdminThink\model\AuthRule;
@@ -76,7 +77,7 @@ class AdminBaseRuleUserController extends AdminBaseController
             }
             // 如果修改密码则md5
             if (!empty($data['password'])) {
-                $data['password']=md5($data['password']);
+                $data['password']=StringHelper::password($data['password']);
             }
 
             $result=$this->Users->editData($map,array_filter(array_filter($data),function($k){

@@ -18,8 +18,6 @@
 namespace Hahadu\ImAdminThink\controller;
 use Hahadu\ImAdminThink\model\AdminNav;
 use think\App;
-use think\facade\Config;
-use think\facade\Db;
 use think\facade\View;
 
 

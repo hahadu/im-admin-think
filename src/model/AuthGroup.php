@@ -4,6 +4,7 @@ declare (strict_types = 1);
 namespace Hahadu\ImAdminThink\model;
 use Hahadu\ThinkBaseModel\BaseModel;
 use Hahadu\ImAdminThink\model\AuthGroupAccess;
+use think\model\concern\SoftDelete;
 
 /****
  * Class AuthGroup
@@ -11,6 +12,10 @@ use Hahadu\ImAdminThink\model\AuthGroupAccess;
  */
 class AuthGroup extends BaseModel
 {
+    use SoftDelete;
+    protected $deleteTime = 'delete_time';
+    protected $defaultSoftDelete = NULL;
+
     /**
      * 传递主键id删除数据
      * @param  array   $map  主键id

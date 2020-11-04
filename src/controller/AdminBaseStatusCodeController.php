@@ -50,7 +50,7 @@ class AdminBaseStatusCodeController extends AdminBaseController
         if($add_data>0){
             $result = 100012;
         }else{
-            $result = 200001;
+            $result = 420001;
         }
         return $result;
     }

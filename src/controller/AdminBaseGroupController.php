@@ -29,9 +29,6 @@ class AdminBaseGroupController extends AdminBaseController
     private $auth_rule;
     private $auth_group;
     private $auth_group_access;
-    private $jumpUrlRule = 'admin/rule/index';
-    private $jumpGroup   = 'admin/rule/group';
-    private $jumpUrlUserList = 'admin/rule/admin_user_list';
     public function __construct(App $app)
     {
         parent::__construct($app);

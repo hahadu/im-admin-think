@@ -11,6 +11,7 @@ class AuthGroupAccess extends BaseModel
 {
     use SoftDelete;
     protected $deleteTime = 'delete_time';
+    protected $defaultSoftDelete = NULL;
     /**
      * 根据group_id获取全部用户id
      * @param  int $group_id 用户组id
