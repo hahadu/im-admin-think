@@ -23,13 +23,15 @@ use think\facade\View;
 
 class AdminBaseController extends BaseController
 {
+
     public function __construct(App $app)
     {
         parent::__construct($app);
 
         $adminNav=[
             'adminNav'=>$this->adminNavLevel(),
-            'user' => session('user'),
+            'index' => $this->getCurrent(),
+            'user' => get_user(),
         ];
         View::assign($adminNav);
     }
@@ -38,9 +40,13 @@ class AdminBaseController extends BaseController
         $data = $adminNav->getTreeData('level','order_by,id');
         return $data;
     }
+    protected function getCurrent(){
+        $adminNav = new AdminNav;
+        return $adminNav->getCurrentInfo();
+    }
 
     public function __call($method, $args){
-        return jumpPag(404,'/admin');
+        return jump_page(404,'/admin');
     }
 
 }

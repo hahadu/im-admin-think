@@ -35,12 +35,12 @@ class StatusCodeController extends AdminBaseStatusCodeController
     }
     public function rec_delete($id){
         $result = parent::rec_delete($id);
-        return jumpPag($result);
+        return jump_page($result);
     }
     public function add()
     {
         $result = parent::add_sataus_code();
-        return  jumpPag($result,$this->jumpUrl);
+        return  jump_page($result,$this->jumpUrl);
     }
 
     /**
@@ -53,7 +53,7 @@ class StatusCodeController extends AdminBaseStatusCodeController
     {
         if(request()->isPost()){
             $result = parent::edit_status_code();
-            return jumpPag($result);
+            return jump_page($result);
         }
     }
 
@@ -66,7 +66,7 @@ class StatusCodeController extends AdminBaseStatusCodeController
     {
         if(request()->isGet()){
             $result = parent::delete_status_code($id);
-            return jumpPag($result);
+            return jump_page($result);
         }
     }
 }

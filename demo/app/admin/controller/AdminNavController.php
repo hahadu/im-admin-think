@@ -35,22 +35,22 @@ class AdminNavController extends AdminBaseNavController{
     public function order_by()
     {
         $result = parent::order_by();
-        return jumpPag($result);
+        return jump_page($result);
     }
     public function add()
     {
         $result = parent::add();
-        return jumpPag($result);
+        return jump_page($result);
     }
     public function edit()
     {
         $result = parent::edit();
-        return jumpPag($result);
+        return jump_page($result);
     }
     public function delete()
     {
         $result = parent::delete();
-        return jumpPag($result);
+        return jump_page($result);
     }
 
 }

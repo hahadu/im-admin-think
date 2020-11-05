@@ -36,9 +36,9 @@ class RuleGroupController extends AdminBaseRuleGroupController
         if(request()->isPost()){
             $result = parent::rule_group();
             if ($result) {
-                return jumpPag(100011);
+                return jump_page(100011);
             }else{
-                return jumpPag($result);
+                return jump_page($result);
             }
         }else{
             $id=request()->get('id');
@@ -63,7 +63,7 @@ class RuleGroupController extends AdminBaseRuleGroupController
     public function add_user_from_group(Request $request)
     {
         $result = parent::add_user_from_group($request);
-        return jumpPag($result);
+        return jump_page($result);
     }
 
     /****
@@ -71,6 +71,6 @@ class RuleGroupController extends AdminBaseRuleGroupController
      */
     public function delete_user_from_group(Request $request){
         $result= parent::delete_user_from_group($request);
-        return jumpPag($result);
+        return jump_page($result);
     }
 }

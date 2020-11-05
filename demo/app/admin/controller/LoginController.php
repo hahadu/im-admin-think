@@ -24,13 +24,13 @@ class LoginController extends BaseLoginController
         }else{
             $jumpUrl = '/admin/login/index';
         }
-        return jumpPag($result,$jumpUrl);
+        return jump_page($result,$jumpUrl);
     }
     public function logout()
     {
         $result = parent::logout();
         $jumpUrl = ($result == 100004)?'/admin/login/index':'/admin/index/index';
-        return jumpPag($result,$jumpUrl);
+        return jump_page($result,$jumpUrl);
     }
 
 

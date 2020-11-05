@@ -1,6 +1,7 @@
 <?php
 namespace Hahadu\ImAdminThink\middleware;
 use Hahadu\ThinkAuth\Auth;
+use Hahadu\ThinkJumpPage\JumpPage;
 use think\facade\Request;
 use think\facade\Session;
 
@@ -25,7 +26,7 @@ class CheckAdminRuleMiddleware
         $check_result = $auth->check($rule_url,Session::get('user.id'));
         if(!$check_result){
 
-            jumpPag(300001,'/index')->send();
+            JumpPage::jumpPage(300001,'/index')->send();
         }
         return $next($request);
 

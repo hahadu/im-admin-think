@@ -22,6 +22,6 @@ namespace app\admin\controller;
 class ErrorController
 {
     public function __call($method, $args){
-        return jumpPag(404,'/admin');
+        return jump_page(404,'/admin');
     }
 }

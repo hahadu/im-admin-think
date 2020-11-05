@@ -31,7 +31,7 @@ class RuleAdminUserController extends AdminBaseRuleUserController
     public function add_admin(){
         if(Request::isPost()){
             $result = parent::add_admin();
-            return jumpPag($result);
+            return jump_page($result);
 
         }else{
             $assign = parent::add_admin();
@@ -46,9 +46,9 @@ class RuleAdminUserController extends AdminBaseRuleUserController
         if(request()->isPost()){
             $result = parent::edit_admin($id);
             if($result){
-                return jumpPag('1');
+                return jump_page('1');
             }else{
-                return jumpPag('0');
+                return jump_page('0');
             }
         }else{
             $result = parent::edit_admin($id);

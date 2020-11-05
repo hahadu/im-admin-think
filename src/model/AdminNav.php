@@ -67,50 +67,52 @@ class AdminNav extends BaseModel
      * @param string $type tree获取树形结构 level获取层级结构
      * @return array        结构数据
      */
-    /**
     public function getTreeData($type = 'tree', $order = '', $name = 'name', $child = 'id', $parent = 'pid')
     {
         // 判断是否需要排序
         if (empty($order)) {
-            $data = $this->select();
+            $data = $this->select()->toArray();
         } else {
-            $data = $this->order('order_by is null,' . $order)->select();
+            $data = $this->order('order_by is null,' . $order)->select()->toArray();
         }
-
-    }
-     * */
-
-
-        public function getTreeData($type = 'tree', $order = '', $name = 'name', $child = 'id', $parent = 'pid')
-        {
-
-                // 判断是否需要排序
-                if (empty($order)) {
-                    $data = $this->select()->toArray();
-                } else {
-                    $data = $this->order('order_by is null,' . $order)->select()->toArray();
-                }
-                //dump($data->toArray());
-                // 获取树形或者结构数据
-                if ($type == 'tree') {
-                    $data = Data::tree($data, 'name', 'id', 'pid');
-                } elseif ($type = "level") {
-                    $data = Data::channelLevel($data, 0, '&nbsp;', 'id');
-                    // 显示有权限的菜单
-                    $auth = new Auth();
-                    foreach ($data as $k => $v) {
-                        if ($auth->check($v['url'], Session::get('user.id'))) {
-                            foreach ($v['_child'] as $m => $n) {
-                                if (!$auth->check($n['url'], Session::get('user.id'))) {
-                                    unset($data[$k]['_child'][$m]);
-                                }
-                            }
-                        } else {
-                            // 删除无权限的菜单
-                            unset($data[$k]);
+        //dump($data->toArray());
+        // 获取树形或者结构数据
+        if ($type == 'tree') {
+            $data = Data::tree($data, 'name', 'id', 'pid');
+        } elseif ($type = "level") {
+            $data = Data::channelLevel($data, 0, '&nbsp;', 'id');
+            // 显示有权限的菜单
+            $auth = new Auth();
+            foreach ($data as $k => $v) {
+                if ($auth->check($v['url'], Session::get('user.id'))) {
+                    foreach ($v['_child'] as $m => $n) {
+                        if (!$auth->check($n['url'], Session::get('user.id'))) {
+                            unset($data[$k]['_child'][$m]);
                         }
                     }
+                } else {
+                    // 删除无权限的菜单
+                    unset($data[$k]);
                 }
-                return $data;
             }
+        }
+        return $data;
+    }
+
+    /****
+     * 获取当前页面的菜单信息
+     */
+    public function getCurrentInfo(){
+        $url = parse_name(request()->rootUrl()).'/'.parse_name(request()->controller()).'/'.parse_name(request()->action());
+        $result = $this->field('pid,id')
+            ->getByUrl($url);
+        if(!$result){
+            $result = [
+                'id' => null,
+                'pid'=> null,
+            ];
+        }
+        return $result;
+
+    }
 }

@@ -40,9 +40,9 @@ class GroupController extends AdminBaseGroupController
     {
         $result = parent::base_add_group();
         if ($result) {
-            return jumpPag(100012);
+            return jump_page(100012);
         }else{
-            return jumpPag(420001);
+            return jump_page(420001);
         }
     }
 
@@ -50,22 +50,22 @@ class GroupController extends AdminBaseGroupController
     {
         $result = parent::base_edit_group();
         if ($result) {
-            return jumpPag(100011);
+            return jump_page(100011);
         }else{
-            return jumpPag(420011);
+            return jump_page(420011);
         }
     }
 
     public function delete_group($id)
     {
         $result = parent::base_delete_group($id);
-        return jumpPag($result);
+        return jump_page($result);
     }
 
     public function rec_delete_group($id)
     {
         $result = parent::rec_delete_group($id);
-        return jumpPag($result);
+        return jump_page($result);
     }
     public function on_delete_group()
     {

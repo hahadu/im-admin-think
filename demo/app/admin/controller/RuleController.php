@@ -44,27 +44,27 @@ class RuleController extends AdminBaseRuleController
     {
         $result = parent::add();
         if ($result>0) {
-            return jumpPag(100012,$this->jumpUrlRule);
+            return jump_page(100012,$this->jumpUrlRule);
         }else{
-            return jumpPag(420001,$this->jumpUrlRule);
+            return jump_page(420001,$this->jumpUrlRule);
         }
     }
     public function edit()
     {
         $result =  parent::edit();
         if ($result>0) {
-            return jumpPag(100011);
+            return jump_page(100011);
         }else{
-            return jumpPag(420011);
+            return jump_page(420011);
         }
     }
     public function delete($id)
     {
         $result = parent::delete($id);
         if($result){
-            return jumpPag('100013',$this->jumpUrlRule);
+            return jump_page('100013',$this->jumpUrlRule);
         }else{
-            return jumpPag(400013,$this->jumpUrlRule);
+            return jump_page(400013,$this->jumpUrlRule);
         }
     }
     public function on_delete_rule()
@@ -76,7 +76,7 @@ class RuleController extends AdminBaseRuleController
     public function rec_delete_rule($id)
     {
         $result = parent::rec_delete_rule($id);
-        return jumpPag($result);
+        return jump_page($result);
 
     }
 }
