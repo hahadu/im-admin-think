@@ -43,11 +43,11 @@ class AdminBaseStatusCodeController extends AdminBaseController
      * 添加状态码
      * @return int
      */
-    public function add_sataus_code()
+    public function add_status_code()
     {
         $data=$this->request->post();
         $add_data=$this->status_code_data->addData($data);
-        if($add_data>0){
+        if($add_data){
             $result = 100012;
         }else{
             $result = 420001;
