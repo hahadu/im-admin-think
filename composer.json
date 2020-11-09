@@ -21,12 +21,12 @@
         "topthink/think-multi-app": "^1.0",
         "topthink/think-view": "^1.0",
         "topthink/think-captcha": "^3.0",
-        "hahadu/think-basemodel": ">=v1.0",
-        "hahadu/think-auth": ">=1.0",
-        "hahadu/think-jump-class": ">=2.0",
-        "hahadu/helper-function": ">=0.6.0",
+        "hahadu/think-basemodel": "^1.0",
+        "hahadu/think-auth": "^1.0",
+        "hahadu/think-jump-class": "^2.0",
+        "hahadu/helper-function": "^0.6.0",
         "hahadu/think-helper": "*",
-        "hahadu/think-userlogin": ">=1.0.0"
+        "hahadu/think-userlogin": "^1.0.0"
     },
     "require-dev": {
         "symfony/var-dumper": "^4.2",
