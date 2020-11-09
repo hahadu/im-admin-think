@@ -26,7 +26,7 @@
         "hahadu/think-jump-class": ">=3.0",
         "hahadu/helper-function": ">=0.7.0",
         "hahadu/think-helper": "*",
-        "hahadu/think-userlogin": ">=1.0.0"
+        "hahadu/think-userlogin": ">=2.0.0"
     },
     "require-dev": {
         "symfony/var-dumper": "^4.2",
