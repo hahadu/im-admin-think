@@ -23,7 +23,11 @@ class CheckUserLoginMiddleware{
     public function handle($request, \Closure $next){
         //验证是否登录
         if (Session::get('user.id')==null){
-            JumpPage::jumpPage(420102,'/admin/login')->send();
+            if(config('jumpPage.ajax')){
+                return JumpPage::jumpPage(420102);
+            }else{
+                JumpPage::jumpPage(420102,'/admin/login')->send();
+            }
         }
         return $next($request);
     }

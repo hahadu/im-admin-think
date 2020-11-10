@@ -24,4 +24,5 @@ class Users extends UserBaseModel
     {
         return parent::deleteData($map, $type);
     }
+
 }
