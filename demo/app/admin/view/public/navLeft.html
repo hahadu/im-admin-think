@@ -25,9 +25,9 @@
                 {foreach $adminNav as $key=>$vo }
 
 
-                <li class="nav-item has-treeview ">
+                <li class="nav-item has-treeview {eq name='$vo.id' value='$index.pid'}menu-open{/eq}">
 
-                    <a href="{:url($vo.url)}" class="nav-link">
+                    <a href="{:url($vo.url)}" class="nav-link {eq name='$vo.id' value='$index.pid'}active{/eq}">
                         <i class="nav-icon fa fa-{$vo.icon}"></i>
                         <p>
                             {$vo.name}
@@ -37,7 +37,7 @@
                     <ul class="nav nav-treeview">
                         {foreach $vo._child as $key => $voc}
                         <li class="nav-item ">
-                            <a href="{:url($voc.url)}" class="nav-link">
+                            <a href="{:url($voc.url)}" class="nav-link {eq name='$voc.id' value='$index.id'}active{/eq}">
                                 <i class="fa fa-circle nav-icon"></i>
                                 <p>{$voc.name}</p>
                             </a>

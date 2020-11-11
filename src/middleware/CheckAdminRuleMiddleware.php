@@ -2,6 +2,8 @@
 namespace Hahadu\ImAdminThink\middleware;
 use Hahadu\ThinkAuth\Auth;
 use Hahadu\ThinkJumpPage\JumpPage;
+use Hahadu\ThinkUserLogin\Builder\JWTBuilder;
+use think\facade\Config;
 use think\facade\Request;
 use think\facade\Session;
 
@@ -13,7 +15,7 @@ use think\facade\Session;
 class CheckAdminRuleMiddleware
 {
     /****
-     * @param $request
+     * @param Request $request
      * @param \Closure $next
      * @return mixed
      */
@@ -23,7 +25,17 @@ class CheckAdminRuleMiddleware
         $controller_name = parse_name(Request::controller()); //控制名
         $action_name = parse_name(Request::action());   //操作名
         $rule_url = $root_name .'/'. $controller_name .'/'. $action_name;
-        $check_result = $auth->check($rule_url,Session::get('user.id'));
+        if(Config::get('login.JWT_login')==true) {
+            $token = $request->param(Config::get('login.token_name'));
+            $parser = JWTBuilder::parser($token);
+            if (is_int($parser)) {
+                JumpPage::jumpPage($parser)->send();
+            }
+            $uid = $parser->getClaim('uid');
+        }else{
+            $uid =Session::get('user.id');
+        }
+        $check_result = $auth->check($rule_url,$uid);
         if(!$check_result){
 
             JumpPage::jumpPage(300001,'/index')->send();

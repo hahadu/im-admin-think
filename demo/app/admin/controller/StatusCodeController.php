@@ -39,7 +39,7 @@ class StatusCodeController extends AdminBaseStatusCodeController
     }
     public function add()
     {
-        $result = parent::add_sataus_code();
+        $result = parent::add_status_code();
         return  jump_page($result,$this->jumpUrl);
     }
 

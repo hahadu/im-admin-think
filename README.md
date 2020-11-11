@@ -4,6 +4,7 @@ thinkphp-admin模块
 在hahadu/think-auth模块的基础上实现的后台权限管理
 
 实现的功能：
+* 用户登录，登录验证方式支持session/cookie、JWT两种方式
 * 后台权限管理
 * 后台权限配置
 * 后台菜单管理
@@ -25,6 +26,6 @@ thinkphp-admin模块
 将sql内.sql文件导入数据库
 
 使用：
-* demo文件夹内为示例文件（已实现所有功能），覆盖root目录即可，可根据需要自行选择
+* demo文件夹内为示例文件（已实现大部分功能），覆盖root目录即可，可根据需要自行选择
 * 账号:admin 密码：admin
 * 密码采用md5加密

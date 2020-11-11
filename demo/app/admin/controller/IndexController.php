@@ -18,6 +18,7 @@
 declare (strict_types = 1);
 
 namespace app\admin\controller;
+use Hahadu\Helper\StringHelper;
 use Hahadu\ImAdminThink\controller\AdminBaseController;
 use think\facade\View;
 class IndexController extends AdminBaseController
@@ -32,6 +33,9 @@ class IndexController extends AdminBaseController
     }
     public function welcome(){
         return '';
+    }
+    public function jwt(){
+        return new Builder();
     }
 
 

@@ -16,40 +16,7 @@
  **/
 
 // 这是系统自动生成的公共文件
-/****
- * 判断是否为POST提交
- */
-if(!function_exists('is_post')){
-    function is_post(){
-        return \think\facade\Request::isPost();
-    }
-}
-if(!function_exists('status_code')){
-    function status_code($code){
-        $result = \Hahadu\ThinkJumpPage\JumpPage::status_code($code);
-        return $result;
-    }
-}
 
-/****
- * @param $code
- * @param string|null $jumpUrl
- * @param int|null $waitSecond
- */
-if(!function_exists('jumpPag')){
-    function jumpPag($code,$jumpUrl = null,$waitSecond = null){
-        return \Hahadu\ThinkJumpPage\JumpPage::jumpPage($code,$jumpUrl,$waitSecond);
-    }
-}
-/**
- * 返回用户id
- * @return integer 用户id
- */
-if(!function_exists('get_uid')){
-    function get_uid(){
-        return \think\facade\Session::get('user.id');
-    }
-}
 /**
  * 检测是否登录
  * @return boolean 是否登录

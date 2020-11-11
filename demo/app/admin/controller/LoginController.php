@@ -10,6 +10,7 @@ class LoginController extends BaseLoginController
 {
     public function __construct()
     {
+        parent::__construct();
         View::assign('title','管理员登录面板');
     }
     public function index()
@@ -19,12 +20,12 @@ class LoginController extends BaseLoginController
     public function login()
     {
         $result = parent::login();
-        if($result == 100003){
+        if($result['code'] == 100003){
             $jumpUrl = '/admin/index/index';
         }else{
             $jumpUrl = '/admin/login/index';
         }
-        return jump_page($result,$jumpUrl);
+        return jump_page($result['code'],$jumpUrl);
     }
     public function logout()
     {
@@ -33,11 +34,6 @@ class LoginController extends BaseLoginController
         return jump_page($result,$jumpUrl);
     }
 
-
-    protected function user_data()
-    {
-        return Db::name('users');
-    }
 
 
 
