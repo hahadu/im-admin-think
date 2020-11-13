@@ -27,5 +27,7 @@ thinkphp-admin模块
 
 使用：
 * demo文件夹内为示例文件（已实现大部分功能），覆盖root目录即可，可根据需要自行选择
-* 账号:admin 密码：admin
-* 密码采用md5加密
+
+  交流qq群 [(点击链接加入群聊【thinkphp6开发交流群】：839695142]https://jq.qq.com/?_wv=1027&k=FxgUKLhJ)
+
+

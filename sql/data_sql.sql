@@ -165,18 +165,6 @@ CREATE TABLE `du_home_nav` (
 -- 转存表中的数据 `du_home_nav`
 --
 
-INSERT INTO `du_home_nav` (`id`, `pid`, `name`, `url`, `icon`, `order_number`) VALUES
-(42, 0, '首页', 'Mail/Index/index', 'home', 1),
-(43, 0, '邮件模板', '', 'envelope', 5),
-(44, 43, '新建模板', 'Mail/Index/mail_tpl_add', '', 2),
-(45, 43, '模板列表', 'Mail/Index/mail_tpl_list', '', 1),
-(46, 0, '收件人', '', 'user', 2),
-(47, 46, '收件人列表', 'Mail/Index/AddressMail', '', NULL),
-(48, 46, '发件人列表', 'Mail/Index/smtp_email_list', '', NULL),
-(49, 0, '其他工具', '', 'home', 10),
-(50, 49, '文字转语音', 'Home/Index/index', '', 1),
-(51, 49, '图片转代码', 'Home/Imgtxt/index', '', 2);
-
 -- --------------------------------------------------------
 
 --

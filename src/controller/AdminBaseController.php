@@ -28,12 +28,7 @@ class AdminBaseController extends BaseController
     {
         parent::__construct($app);
 
-        $adminNav=[
-            'adminNav'=>$this->adminNavLevel(),
-            'index' => $this->getCurrent(),
-            'user' => get_user(),
-        ];
-        View::assign($adminNav);
+        View::assign($this->get_home_info());
     }
     protected function adminNavLevel(){
         $adminNav = new AdminNav;
@@ -47,6 +42,14 @@ class AdminBaseController extends BaseController
 
     public function __call($method, $args){
         return jump_page(404,'/admin');
+    }
+    //获取页面常用信息
+    public function get_home_info(){
+        return [
+            'adminNav'=>$this->adminNavLevel(),
+            'index' => $this->getCurrent(),
+            'user' => get_user(),
+        ];
     }
 
 }
