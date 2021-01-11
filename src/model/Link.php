@@ -10,6 +10,7 @@ use think\model\concern\SoftDelete;
 class Link extends BaseModel
 {
     use SoftDelete;
+    protected $pk = 'lid';
     protected $deleteTime = 'delete_time';
     protected $defaultSoftDelete = NULL;
 
