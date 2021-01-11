@@ -23,9 +23,9 @@ class UserBaseModel extends BaseModel{
     use SoftDelete;
     protected $deleteTime = 'delete_time';
     protected $defaultSoftDelete = NULL;
-    protected $autoWriteTimestamp = true;
     protected $updateTime = 'last_login_time';
     protected $createTime = 'register_time';
+    protected $autoWriteTimestamp = true;
 
     /****
      * 获取注册用户列表

@@ -9,6 +9,10 @@ namespace Hahadu\ImAdminThink\model;
  */
 class Users extends UserBaseModel
 {
+    protected $updateTime = 'last_login_time';
+    protected $createTime = 'register_time';
+    protected $autoWriteTimestamp = true;
+
     /****
      * @param array $data
      * @return int
