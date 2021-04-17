@@ -49,6 +49,7 @@ abstract class BaseController
      */
     protected $batchValidate = false;
 
+
     /**
      * 控制器中间件
      * @var array

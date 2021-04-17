@@ -35,7 +35,6 @@ class AdminBaseRuleGroupController extends AdminBaseController
         $this->auth_rule = new AuthRule();
         $this->auth_group = new AuthGroup();
         $this->auth_group_access = new AuthGroupAccess();
-        // $this->Users = new Users();
     }
     /**
      * 分配权限

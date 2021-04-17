@@ -21,7 +21,6 @@ namespace Hahadu\ImAdminThink\controller;
 use Hahadu\ImAdminThink\model\AuthGroup;
 use Hahadu\ImAdminThink\model\AuthGroupAccess;
 use Hahadu\ImAdminThink\model\AuthRule;
-use Hahadu\ImAdminThink\model\Users;
 use think\App;
 
 class AdminBaseGroupController extends AdminBaseController
@@ -35,7 +34,6 @@ class AdminBaseGroupController extends AdminBaseController
         $this->auth_rule = new AuthRule();
         $this->auth_group = new AuthGroup();
         $this->auth_group_access = new AuthGroupAccess();
-        $this->Users = new Users();
     }
     /**
      * 用户组列表

@@ -29,7 +29,6 @@ class AdminBaseRuleController extends AdminBaseController
     private $auth_rule;
     private $auth_group;
     private $auth_group_access;
-    private $Users;
 
     public function __construct(App $app)
     {
@@ -37,7 +36,6 @@ class AdminBaseRuleController extends AdminBaseController
         $this->auth_rule = new AuthRule();
         $this->auth_group = new AuthGroup();
         $this->auth_group_access = new AuthGroupAccess();
-        $this->Users = new Users();
 
     }
 
