@@ -3,9 +3,7 @@
 
 namespace Hahadu\ImAdminThink\model;
 
-
 use Hahadu\ThinkBaseModel\BaseModel;
-//use think\model\concern\SoftDelete;
 use Hahadu\ImAdminThink\model\SetUserLevel;
 
 /*****
@@ -14,9 +12,6 @@ use Hahadu\ImAdminThink\model\SetUserLevel;
  */
 class UserLevel extends BaseModel
 {
-//    use SoftDelete;
-
-//    protected $deleteTime = 'delete_time';
     protected $defaultSoftDelete = NULL;
     protected $user_level_data;
 

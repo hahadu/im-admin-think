@@ -17,7 +17,6 @@
 
 namespace Hahadu\ImAdminThink\controller;
 
-
 use Hahadu\ImAdminThink\model\StatusCode;
 use think\App;
 

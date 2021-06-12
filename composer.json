@@ -24,8 +24,8 @@
         "hahadu/think-basemodel": ">=1.0",
         "hahadu/think-auth": ">=1.0",
         "hahadu/think-jump-class": ">=3.0",
-        "hahadu/helper-function": ">=0.7.0",
-        "hahadu/think-helper": "*",
+        "hahadu/helper-function": ">=0.9.0",
+        "hahadu/think-helper": ">=0.1",
         "hahadu/think-userlogin": ">=2.0.0"
     },
     "require-dev": {

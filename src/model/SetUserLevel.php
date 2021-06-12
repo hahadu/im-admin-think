@@ -3,7 +3,6 @@
 
 namespace Hahadu\ImAdminThink\model;
 
-
 use Hahadu\ThinkBaseModel\BaseModel;
 use think\model\concern\SoftDelete;
 
@@ -19,6 +18,13 @@ class SetUserLevel extends BaseModel
     protected $defaultSoftDelete = NULL;
     protected $autoWriteTimestamp = true;
 
+    /*******
+     * 等级列表
+     * @return \think\Collection
+     * @throws \think\db\exception\DataNotFoundException
+     * @throws \think\db\exception\DbException
+     * @throws \think\db\exception\ModelNotFoundException
+     */
     public function level_list(){
         return $this->field('id,level,level_name')->select();
     }

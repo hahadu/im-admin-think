@@ -17,7 +17,6 @@
 
 namespace Hahadu\ImAdminThink\controller;
 
-
 use Hahadu\ImAdminThink\model\AuthGroup;
 use Hahadu\ImAdminThink\model\AuthGroupAccess;
 use Hahadu\ImAdminThink\model\AuthRule;

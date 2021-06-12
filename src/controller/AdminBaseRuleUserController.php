@@ -17,7 +17,6 @@
 
 namespace Hahadu\ImAdminThink\controller;
 
-
 use Hahadu\Helper\StringHelper;
 use Hahadu\ImAdminThink\model\AuthGroup;
 use Hahadu\ImAdminThink\model\AuthGroupAccess;

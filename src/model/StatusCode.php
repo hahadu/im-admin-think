@@ -19,7 +19,10 @@ namespace Hahadu\ImAdminThink\model;
 use Hahadu\ThinkBaseModel\BaseModel;
 use think\model\concern\SoftDelete;
 
-
+/******
+ * 状态码
+ * @package Hahadu\ImAdminThink\model
+ */
 class StatusCode extends BaseModel{
     use SoftDelete;
     protected $deleteTime = 'delete_time';
