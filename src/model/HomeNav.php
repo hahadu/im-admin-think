@@ -15,7 +15,7 @@
  *  +----------------------------------------------------------------------
  **/
 
-namespace Hahadu\ImAdminThink\model;
+namespace Hahadu\ThinkAdmin\model;
 
 use Hahadu\ThinkBaseModel\BaseModel;
 use Hahadu\DataHandle\Data;

@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace Hahadu\ImAdminThink\model;
+namespace Hahadu\ThinkAdmin\model;
 
 
 /**

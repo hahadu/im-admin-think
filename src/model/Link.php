@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Hahadu\ImAdminThink\model;
+namespace Hahadu\ThinkAdmin\model;
 
 
 use Hahadu\ThinkBaseModel\BaseModel;

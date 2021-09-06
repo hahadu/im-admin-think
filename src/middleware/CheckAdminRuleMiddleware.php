@@ -1,5 +1,5 @@
 <?php
-namespace Hahadu\ImAdminThink\middleware;
+namespace Hahadu\ThinkAdmin\middleware;
 use Hahadu\ThinkAuth\Auth;
 use Hahadu\ThinkJumpPage\JumpPage;
 use Hahadu\ThinkUserLogin\Builder\JWTBuilder;

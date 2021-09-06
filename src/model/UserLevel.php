@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Hahadu\ImAdminThink\model;
+namespace Hahadu\ThinkAdmin\model;
 
 use Hahadu\ThinkBaseModel\BaseModel;
-use Hahadu\ImAdminThink\model\SetUserLevel;
+use Hahadu\ThinkAdmin\model\SetUserLevel;
 
 /*****
  * 分配用户等级

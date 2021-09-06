@@ -15,11 +15,11 @@
  *  +----------------------------------------------------------------------
  **/
 
-namespace Hahadu\ImAdminThink\controller;
-use Hahadu\ImAdminThink\model\AdminNav;
+namespace Hahadu\ThinkAdmin\controller;
+use Hahadu\ThinkAdmin\model\AdminNav;
 use think\App;
 use think\facade\View;
-use Hahadu\ImAdminThink\model\Users;
+use Hahadu\ThinkAdmin\model\Users;
 
 class AdminBaseController extends BaseController
 {

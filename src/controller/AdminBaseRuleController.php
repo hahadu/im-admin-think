@@ -15,13 +15,13 @@
  *  +----------------------------------------------------------------------
  **/
 
-namespace Hahadu\ImAdminThink\controller;
+namespace Hahadu\ThinkAdmin\controller;
 
 
-use Hahadu\ImAdminThink\model\AuthGroup;
-use Hahadu\ImAdminThink\model\AuthGroupAccess;
-use Hahadu\ImAdminThink\model\AuthRule;
-use Hahadu\ImAdminThink\model\Users;
+use Hahadu\ThinkAdmin\model\AuthGroup;
+use Hahadu\ThinkAdmin\model\AuthGroupAccess;
+use Hahadu\ThinkAdmin\model\AuthRule;
+use Hahadu\ThinkAdmin\model\Users;
 use think\App;
 
 class AdminBaseRuleController extends AdminBaseController

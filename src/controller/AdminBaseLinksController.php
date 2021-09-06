@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Hahadu\ImAdminThink\controller;
+namespace Hahadu\ThinkAdmin\controller;
 
 use app\Request;
-use Hahadu\ImAdminThink\model\Link;
+use Hahadu\ThinkAdmin\model\Link;
 use think\App;
 
 /*****

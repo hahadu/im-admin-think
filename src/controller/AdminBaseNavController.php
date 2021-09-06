@@ -15,9 +15,9 @@
  *  +----------------------------------------------------------------------
  **/
 
-namespace Hahadu\ImAdminThink\controller;
+namespace Hahadu\ThinkAdmin\controller;
 
-use Hahadu\ImAdminThink\model\AdminNav;
+use Hahadu\ThinkAdmin\model\AdminNav;
 use think\App;
 
 class AdminBaseNavController extends AdminBaseController

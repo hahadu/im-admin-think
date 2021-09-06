@@ -1,9 +1,9 @@
 <?php
 declare (strict_types = 1);
 
-namespace Hahadu\ImAdminThink\model;
+namespace Hahadu\ThinkAdmin\model;
 use Hahadu\ThinkBaseModel\BaseModel;
-use Hahadu\ImAdminThink\model\AuthGroupAccess;
+use Hahadu\ThinkAdmin\model\AuthGroupAccess;
 use think\model\concern\SoftDelete;
 
 /****

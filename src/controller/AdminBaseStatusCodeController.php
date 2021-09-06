@@ -15,9 +15,9 @@
  *  +----------------------------------------------------------------------
  **/
 
-namespace Hahadu\ImAdminThink\controller;
+namespace Hahadu\ThinkAdmin\controller;
 
-use Hahadu\ImAdminThink\model\StatusCode;
+use Hahadu\ThinkAdmin\model\StatusCode;
 use think\App;
 
 class AdminBaseStatusCodeController extends AdminBaseController
