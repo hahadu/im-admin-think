@@ -2,8 +2,8 @@
 declare (strict_types = 1);
 
 namespace app\admin\controller;
-use Hahadu\ImAdminThink\controller\AdminBaseController;
-use Hahadu\ImAdminThink\model\Users;
+use Hahadu\ThinkAdmin\controller\AdminBaseController;
+use Hahadu\ThinkAdmin\model\Users;
 use think\App;
 use think\facade\View;
 use think\Request;

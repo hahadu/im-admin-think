@@ -2,7 +2,7 @@
 declare (strict_types = 1);
 
 namespace app\admin\controller;
-use Hahadu\ImAdminThink\controller\AdminBaseRuleUserController;
+use Hahadu\ThinkAdmin\controller\AdminBaseRuleUserController;
 use think\App;
 use think\facade\View;
 use think\facade\Request;

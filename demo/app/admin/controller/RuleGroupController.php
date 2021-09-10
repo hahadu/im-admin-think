@@ -11,12 +11,12 @@
  *  +----------------------------------------------------------------------
  *  | Date: 2020/10/6 上午12:46
  *  +----------------------------------------------------------------------
- *  | Description:   ImAdminThink
+ *  | Description:   ThinkAdmin
  *  +----------------------------------------------------------------------
  **/
 
 namespace app\admin\controller;
-use \Hahadu\ImAdminThink\controller\AdminBaseRuleGroupController;
+use \Hahadu\ThinkAdmin\controller\AdminBaseRuleGroupController;
 use think\App;
 use think\facade\Db;
 use think\Request;

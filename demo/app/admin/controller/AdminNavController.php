@@ -16,7 +16,7 @@
  **/
 
 namespace app\admin\controller;
-use Hahadu\ImAdminThink\controller\AdminBaseNavController;
+use Hahadu\ThinkAdmin\controller\AdminBaseNavController;
 use think\App;
 use think\facade\View;
 class AdminNavController extends AdminBaseNavController{
@@ -24,6 +24,7 @@ class AdminNavController extends AdminBaseNavController{
     public function __construct(App $app)
     {
         parent::__construct($app);
+
         View::assign("title","后台菜单管理");
     }
     public function index(){

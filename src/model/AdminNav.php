@@ -85,9 +85,9 @@ class AdminNav extends BaseModel
             $auth = new Auth();
             foreach ($data as $k => $v) {
                 if ($auth->check($v['url'], Session::get('user.id'))) {
-                    foreach ($v['_child'] as $m => $n) {
+                    foreach ($v['_data'] as $m => $n) {
                         if (!$auth->check($n['url'], Session::get('user.id'))) {
-                            unset($data[$k]['_child'][$m]);
+                            unset($data[$k]['_data'][$m]);
                         }
                     }
                 } else {

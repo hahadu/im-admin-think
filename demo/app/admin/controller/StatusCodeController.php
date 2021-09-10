@@ -2,7 +2,7 @@
 declare (strict_types = 1);
 
 namespace app\admin\controller;
-use Hahadu\ImAdminThink\controller\AdminBaseStatusCodeController;
+use Hahadu\ThinkAdmin\controller\AdminBaseStatusCodeController;
 use think\App;
 use think\facade\View;
 class StatusCodeController extends AdminBaseStatusCodeController

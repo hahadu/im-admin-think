@@ -19,7 +19,7 @@ declare (strict_types = 1);
 
 namespace app\admin\controller;
 use Hahadu\Helper\StringHelper;
-use Hahadu\ImAdminThink\controller\AdminBaseController;
+use Hahadu\ThinkAdmin\controller\AdminBaseController;
 use think\facade\View;
 class IndexController extends AdminBaseController
 {

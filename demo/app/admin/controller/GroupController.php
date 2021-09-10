@@ -16,7 +16,7 @@
  **/
 
 namespace app\admin\controller;
-use Hahadu\ImAdminThink\controller\AdminBaseGroupController;
+use Hahadu\ThinkAdmin\controller\AdminBaseGroupController;
 use think\App;
 use think\facade\View;
 

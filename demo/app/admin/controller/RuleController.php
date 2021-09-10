@@ -2,11 +2,11 @@
 declare (strict_types = 1);
 
 namespace app\admin\controller;
-use Hahadu\ImAdminThink\controller\AdminBaseRuleController;
-use Hahadu\ImAdminThink\model\AuthGroup;
-use Hahadu\ImAdminThink\model\AuthRule;
-use Hahadu\ImAdminThink\model\AuthGroupAccess;
-use Hahadu\ImAdminThink\model\Users;
+use Hahadu\ThinkAdmin\controller\AdminBaseRuleController;
+use Hahadu\ThinkAdmin\model\AuthGroup;
+use Hahadu\ThinkAdmin\model\AuthRule;
+use Hahadu\ThinkAdmin\model\AuthGroupAccess;
+use Hahadu\ThinkAdmin\model\Users;
 use think\App;
 use think\facade\Request;
 use think\facade\View;

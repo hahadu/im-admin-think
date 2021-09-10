@@ -18,7 +18,7 @@
 declare (strict_types = 1);
 
 namespace app\admin\controller;
-use Hahadu\ImAdminThink\controller\AdminBaseController;
+use Hahadu\ThinkAdmin\controller\AdminBaseController;
 
 class SystemSetController extends AdminBaseController
 {
