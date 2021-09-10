@@ -78,9 +78,9 @@ class AdminNav extends BaseModel
         //dump($data->toArray());
         // 获取树形或者结构数据
         if ($type == 'tree') {
-            $data = Data::tree($data, 'name', 'id', 'pid');
+            $data = Data::make($data)->tree($data, 'name', 'id', 'pid');
         } elseif ($type = "level") {
-            $data = Data::channelLevel($data, 0, '&nbsp;', 'id');
+            $data = Data::make($data)->channelLevel( 0, '&nbsp;', 'id');
             // 显示有权限的菜单
             $auth = new Auth();
             foreach ($data as $k => $v) {
