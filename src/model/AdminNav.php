@@ -76,10 +76,11 @@ class AdminNav extends BaseModel
             $data = $this->order('order_by is null,' . $order)->select()->toArray();
         }
         // 获取树形或者结构数据
+        $data = new Data($data);
         if ($type == 'tree') {
-            $data = Data::make($data)->tree( 'name', 'id', 'pid');
+            $data = $data->tree( 'name', 'id', 'pid');
         } elseif ($type = "level") {
-            $data = Data::make($data)->channelLevel( 0, '&nbsp;', 'id');
+            $data = $data->channelLevel( 0, '&nbsp;', 'id');
             // 显示有权限的菜单
             $auth = new Auth();
             $data->each(function ($v,$k)use($auth,$data){
