@@ -75,26 +75,27 @@ class AdminNav extends BaseModel
         } else {
             $data = $this->order('order_by is null,' . $order)->select()->toArray();
         }
-        //dump($data->toArray());
         // 获取树形或者结构数据
         if ($type == 'tree') {
-            $data = Data::make($data)->tree($data, 'name', 'id', 'pid');
+            $data = Data::make($data)->tree( 'name', 'id', 'pid');
         } elseif ($type = "level") {
             $data = Data::make($data)->channelLevel( 0, '&nbsp;', 'id');
             // 显示有权限的菜单
             $auth = new Auth();
-            foreach ($data as $k => $v) {
+            $data->each(function ($v,$k)use($auth,$data){
                 if ($auth->check($v['url'], Session::get('user.id'))) {
-                    foreach ($v['_data'] as $m => $n) {
+                    foreach ($v['_child'] as $m => $n) {
                         if (!$auth->check($n['url'], Session::get('user.id'))) {
-                            unset($data[$k]['_data'][$m]);
+                            unset($data[$k]['_child'][$m]);
                         }
                     }
+                    return $v;
                 } else {
                     // 删除无权限的菜单
-                    unset($data[$k]);
+                    unset($v);
                 }
-            }
+                //return $v;
+            });
         }
         return $data;
     }
