@@ -33,6 +33,7 @@
         "topthink/think-trace":"^1.0"
     },
     "autoload": {
+        "files": ["src/helper.php"],
         "psr-4": {
             "Hahadu\\ThinkAdmin\\": "src/"
         }
