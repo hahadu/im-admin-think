@@ -17,12 +17,14 @@
 
 namespace Hahadu\ThinkAdmin\controller;
 use Hahadu\ThinkAdmin\model\AdminNav;
+use Hahadu\ThinkAdmin\Traits\ThinkAdminAssets;
 use think\App;
 use think\facade\View;
 use Hahadu\ThinkAdmin\model\Users;
 
 class AdminBaseController extends BaseController
 {
+
     /****
      * @var int 用户ID
      */

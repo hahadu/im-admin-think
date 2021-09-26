@@ -2,8 +2,11 @@
 
 namespace Hahadu\ThinkAdmin\Layout;
 use Closure;
+use think\facade\View;
 use think\helper\Arr;
 use Hahadu\ThinkAdmin\Contract\Renderable;
+use think\Request;
+use Hahadu\ThinkAdmin\Facades\Admin;
 
 class Content implements Renderable
 {
@@ -38,15 +41,21 @@ class Content implements Renderable
      */
     protected $view;
 
+    public $request;
+
     /**
      * Content constructor.
      *
-     * @param Closure|null $callback
+     * @param Request|null $request
      */
-    public function __construct(\Closure $callback = null)
+    public function __construct($request = null)
     {
-        if ($callback instanceof Closure) {
-            $callback($this);
+        //dump($request->get());
+        if ($request instanceof Request) {
+            $this->request = $request;
+        }
+        if ($request instanceof Closure) {
+            $request($this);
         }
     }
 
@@ -211,6 +220,14 @@ class Content implements Renderable
 
         return $contents;
     }
+    /**
+     * @param string $view
+     * @param array  $data
+     */
+    public function component($view, $data = [])
+    {
+        return $this->body(Admin::component($view, $data));
+    }
 
     /**
      * Set success message for content.
@@ -276,11 +293,11 @@ class Content implements Renderable
     /**
      * Render this content.
      *
-     * @return string|\think\response\View
+     * @return string|\think\response\View|json
      */
     public function render()
     {
-        $items = [
+        $fetch = [
             'header'      => $this->title,
             'description' => $this->description,
             'breadcrumb'  => $this->breadcrumb,
@@ -288,6 +305,7 @@ class Content implements Renderable
             '_view_'      => $this->view,
         ];
 
-        return view('admin::content', $items);
+        return View::fetch(admin_view_path('admin.content'), $fetch);
+
     }
 }

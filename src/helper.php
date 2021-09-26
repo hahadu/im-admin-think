@@ -1,5 +1,6 @@
 <?php
-
+use Hahadu\ThinkAdmin\Layout\MessageBag;
+const THINK_ADMIN_BASE_RESOURCESPATH = '/vendor/think-admin';
 if (!function_exists('admin_dump')) {
 
     /**
@@ -77,6 +78,24 @@ if (!function_exists('admin_info')) {
         $message = new MessageBag(get_defined_vars());
 
         session()->flash($type, $message);
+    }
+}
+
+if(!function_exists('admin_resources')){
+    function admin_resources($path=''){
+        return dirname(__DIR__).DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR. $path;
+    }
+}
+
+if(!function_exists('admin_view_path')){
+    function admin_view_path($path=''){
+
+        $str = '';
+        foreach (explode('.', $path) as $v){
+            $str .= $v.DIRECTORY_SEPARATOR;
+        }
+        $str = trim($str,'/').'.html';
+        return admin_resources('view/'.$str);
     }
 }
 
