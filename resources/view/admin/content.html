@@ -40,20 +40,21 @@ echo '</div>';
 
 <div class="wrapper">
 
-    {include file='admin_view_path('admin.partials.header')' /}
+    {include file="admin.partials.header@@admin_view_path" /}
 
-    @include('admin::partials.sidebar')
+    {include file="admin.partials.sidebar@@admin_view_path" }
 
     <div class="content-wrapper" id="pjax-container">
-        {!! Admin::style() !!}
+        {:Admin::style()}
         <div id="app">
-            @yield('content')
+            {block name='content'}@yield('content'){/block}
+
         </div>
-        {!! Admin::script() !!}
-        {!! Admin::html() !!}
+        {:Admin::script()}
+        {:Admin::html()}
     </div>
 
-    @include('admin::partials.footer')
+    {include file="admin.partials.footer@@admin_view_path"/}
 
 </div>
 
@@ -66,7 +67,7 @@ echo '</div>';
 </script>
 
 <!-- REQUIRED JS SCRIPTS -->
-{!! Admin::js() !!}
+{:Admin::js()}
 
 </body>
 </html>

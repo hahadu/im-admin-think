@@ -3,9 +3,11 @@
 namespace Hahadu\ThinkAdmin;
 
 use Closure;
+use Hahadu\ThinkAdmin\model\Users;
 use Hahadu\ThinkAdmin\Traits\ThinkAdminAssets;
 use Hahadu\ThinkAdmin\Layout\Content;
 use think\facade\Route;
+use think\facade\Session;
 
 class Admin
 {
@@ -18,7 +20,7 @@ class Admin
      *
      * @var string
      */
-    const VERSION = '2.0.0';
+    public const VERSION = '2.0.0';
 
     /**
      * @var Navbar
@@ -92,6 +94,23 @@ class Admin
         return self::$metaTitle ? self::$metaTitle : config('admin.title');
     }
 
+    public function user(){
+        return Users::findorFail(Session::get('user.id'));
+    }
+    /**
+     * Get navbar object.
+     *
+     * @return
+     */
+    public function getNavbar()
+    {
+        if (is_null($this->navbar)) {
+            $this->navbar = null;
+        }
+
+        return $this->navbar;
+    }
+
     /**
      * @param null|string $favicon
      *
@@ -99,7 +118,6 @@ class Admin
      */
     public function favicon($favicon = null)
     {
-        //dump('aaa');
         if (is_null($favicon)) {
             return static::$favicon;
         }

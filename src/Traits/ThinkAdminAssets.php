@@ -2,7 +2,7 @@
 
 namespace Hahadu\ThinkAdmin\Traits;
 use think\facade\View;
-
+use Hahadu\Collect\Collection;
 trait ThinkAdminAssets
 {
 
@@ -229,7 +229,7 @@ trait ThinkAdminAssets
             return self::$script = array_merge(self::$script, (array) $script);
         }
 
-        $script = collect(static::$script)
+        $script = Collection::make(static::$script)
             ->merge(static::$deferredScript)
             ->unique()
             ->map(function ($line) {
@@ -255,7 +255,7 @@ trait ThinkAdminAssets
             return self::$style = array_merge(self::$style, (array) $style);
         }
 
-        $style = collect(static::$style)
+        $style = Collection::make(static::$style)
             ->unique()
             ->map(function ($line) {
                 return preg_replace('/\s+/', ' ', $line);
