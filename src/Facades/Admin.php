@@ -25,11 +25,13 @@ use think\View;
      * @method static void booted(\Closure $builder)
      * @method static void bootstrap()
      * @method static void routes()
+     * @method static array menuLinks($menu = [])
      *
      * @see
      */
 class Admin extends Facade
 {
+
     protected static function getFacadeClass()
     {
         return \Hahadu\ThinkAdmin\Admin::class;

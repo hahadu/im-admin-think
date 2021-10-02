@@ -1,5 +1,6 @@
 <?php
 use Hahadu\ThinkAdmin\Layout\MessageBag;
+use Hahadu\Helper\HttpHelper;
 const THINK_ADMIN_BASE_RESOURCESPATH = '/vendor/think-admin';
 if (!function_exists('admin_dump')) {
 
@@ -148,7 +149,7 @@ if (!function_exists('admin_url')) {
      */
     function admin_url($path = '', $parameters = [], $secure = null)
     {
-        if (\Hahadu\Helper\HttpHelper::isValidUrl($path)) {
+        if (HttpHelper::isValidUrl($path)) {
             return $path;
         }
 
@@ -157,6 +158,44 @@ if (!function_exists('admin_url')) {
         return url(admin_base_path($path), $parameters, $secure);
     }
 }
+if (!function_exists('admin_trans')) {
 
+    /**
+     * Translate the given message.
+     *
+     * @param string|null $name
+     * @param array $vars
+     * @param string $lang
+     * @return string|null
+     */
+    function admin_trans(string $name = null, array $vars = [], string $lang = '')
+    {
+        $line = __($name, $vars, $lang);
+
+        if (!is_string($line)) {
+            return $name;
+        }
+
+        return $line;
+    }
+}
+
+if (! function_exists('__')) {
+    /**
+     * 获取语言变量值
+     * @param string|null $name 语言变量名
+     * @param array  $vars 动态变量值
+     * @param string $lang 语言
+     * @return mixed
+     */
+    function __(string $name = null, array $vars = [], string $lang = '')
+    {
+        if (is_null($name)) {
+            return $name;
+        }
+
+        return lang($name, $vars, $lang);
+    }
+}
 
 

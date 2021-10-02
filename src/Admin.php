@@ -3,11 +3,16 @@
 namespace Hahadu\ThinkAdmin;
 
 use Closure;
+use Hahadu\Helper\HttpHelper;
 use Hahadu\ThinkAdmin\model\Users;
 use Hahadu\ThinkAdmin\Traits\ThinkAdminAssets;
 use Hahadu\ThinkAdmin\Layout\Content;
+use think\facade\Config;
 use think\facade\Route;
 use think\facade\Session;
+use Hahadu\ThinkAdmin\model\AdminNav;
+use think\helper\Arr;
+use think\Model;
 
 class Admin
 {
@@ -94,8 +99,11 @@ class Admin
         return self::$metaTitle ? self::$metaTitle : config('admin.title');
     }
 
+    /******
+     * @return Model
+     */
     public function user(){
-        return Users::findorFail(Session::get('user.id'));
+        return Config::get('login.user_model',Users::class)::findorFail(Session::get('user.id'));
     }
     /**
      * Get navbar object.
@@ -109,6 +117,48 @@ class Admin
         }
 
         return $this->navbar;
+    }
+    /**
+     * Left sider-bar menu.
+     *
+     * @return array|\Hahadu\DataHandle\Data
+     */
+    public function menu()
+    {
+        if (!empty($this->menu)) {
+            return $this->menu;
+        }
+
+        $menuClass = config('admin.database.menu_model',AdminNav::class);
+
+        /** @var AdminNav $menuModel */
+        $menuModel = new $menuClass();
+
+        return $this->menu = $menuModel->getTreeData('level','order_by,id');
+    }
+    /**
+     * @param array $menu
+     *
+     * @return array
+     */
+    public function menuLinks($menu = [])
+    {
+        if (empty($menu)) {
+            $menu = $this->menu();
+        }
+
+        $links = [];
+
+
+        foreach ($menu as $item) {
+            if (!$item['_child']->isEmpty()) {
+                $links = array_merge($links, $this->menuLinks($item['_child']));
+            } else {
+                $links[] = Arr::only($item, ['name', 'url', 'icon']);
+            }
+        }
+
+        return $links;
     }
 
     /**
@@ -162,5 +212,15 @@ class Admin
     {
         static::$bootedCallbacks[] = $callback;
     }
+
+    /******
+     * @param $path
+     * @return bool
+     */
+    public function isValidUrl($path){
+        return HttpHelper::isValidUrl($path);
+    }
+
+
 
 }
