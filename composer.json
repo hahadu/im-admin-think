@@ -18,7 +18,6 @@
         "php": ">=7.1.0",
         "topthink/framework": ">=6.0",
         "topthink/think-orm": ">=2.0",
-        "topthink/think-multi-app": ">=1.0",
         "topthink/think-view": ">=1.0",
         "topthink/think-captcha": "^3.0",
         "hahadu/think-basemodel": ">=1.0",
@@ -26,7 +25,9 @@
         "hahadu/think-jump-class": ">=3.0",
         "hahadu/helper-function": ">=0.9.0",
         "hahadu/think-helper": ">=0.1",
-        "hahadu/think-userlogin": ">=2.0.0"
+        "hahadu/think-userlogin": ">=2.0.0",
+        "symfony/polyfill-php81": "^1.23",
+        "illuminate/macroable": "^8.62"
     },
     "require-dev": {
         "symfony/var-dumper": "^4.2",

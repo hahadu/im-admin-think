@@ -13,6 +13,8 @@ use think\facade\Session;
 use Hahadu\ThinkAdmin\model\AdminNav;
 use think\helper\Arr;
 use think\Model;
+use Hahadu\ThinkAdmin\Widgets\Navbar;
+use think\helper\Str;
 
 class Admin
 {
@@ -106,6 +108,22 @@ class Admin
         return Config::get('login.user_model',Users::class)::findorFail(Session::get('user.id'));
     }
     /**
+     * Set navbar.
+     *
+     * @param Closure|null $builder
+     *
+     * @return Navbar
+     */
+    public function navbar(Closure $builder = null)
+    {
+        if (is_null($builder)) {
+            return $this->getNavbar();
+        }
+
+        call_user_func($builder, $this->getNavbar());
+    }
+
+    /**
      * Get navbar object.
      *
      * @return
@@ -113,7 +131,7 @@ class Admin
     public function getNavbar()
     {
         if (is_null($this->navbar)) {
-            $this->navbar = null;
+            $this->navbar = new Navbar();
         }
 
         return $this->navbar;
