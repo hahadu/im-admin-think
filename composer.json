@@ -16,9 +16,9 @@
     ],
     "require": {
         "php": ">=7.1.0",
-        "topthink/framework": ">=6.0",
-        "topthink/think-orm": ">=2.0",
-        "topthink/think-view": ">=1.0",
+        "topthink/framework": "^6.0",
+        "topthink/think-orm": "^2.0",
+        "topthink/think-view": "^1.0",
         "topthink/think-captcha": "^3.0",
         "hahadu/think-basemodel": ">=1.0",
         "hahadu/think-auth": ">=1.0",

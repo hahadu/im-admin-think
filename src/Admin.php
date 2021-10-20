@@ -16,6 +16,7 @@ use think\Model;
 use Hahadu\ThinkAdmin\Widgets\Navbar;
 use think\helper\Str;
 
+
 class Admin
 {
 

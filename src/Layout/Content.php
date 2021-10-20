@@ -305,7 +305,7 @@ class Content implements Renderable
             '_view_'      => $this->view,
         ];
 
-        return View::fetch(admin_view_path('admin.content'), $fetch);
+        return View::fetch(admin_view_path('admin.layout'), $fetch);
 
     }
 }
