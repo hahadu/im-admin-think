@@ -43,13 +43,10 @@ class AdminBaseController extends BaseController
         View::assign($this->get_home_info());
     }
     protected function adminNavLevel(){
-        $adminNav = new AdminNav;
-        $data = $adminNav->getTreeData('level','order_by,id');
-        return $data;
+        return (new AdminNav())->getTreeData('level','order_by,id');
     }
     protected function getCurrent(){
-        $adminNav = new AdminNav;
-        return $adminNav->getCurrentInfo();
+        return (new AdminNav())->getCurrentInfo();
     }
 
     public function __call($method, $args){

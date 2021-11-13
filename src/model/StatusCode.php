@@ -19,7 +19,7 @@ namespace Hahadu\ThinkAdmin\model;
 use Hahadu\ThinkBaseModel\BaseModel;
 use think\model\concern\SoftDelete;
 
-/******
+/**
  * 状态码
  * @package Hahadu\ImAdminThink\model
  */

@@ -7,7 +7,7 @@ namespace Hahadu\ThinkAdmin\model;
 use Hahadu\ThinkBaseModel\BaseModel;
 use think\model\concern\SoftDelete;
 
-/*****
+/**
  * 友情链接
  * Class Link
  * @package Hahadu\ImAdminThink\model

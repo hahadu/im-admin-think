@@ -20,7 +20,7 @@ use Hahadu\ThinkBaseModel\BaseModel;
 use think\model\concern\SoftDelete;
 
 
-/******
+/**
  * 用户基础模型
  * @package Hahadu\ImAdminThink\model
  */

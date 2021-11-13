@@ -125,7 +125,7 @@ class AdminNav extends BaseModel
      * 获取当前页面的菜单信息
      */
     public function getCurrentInfo(){
-        $url = parse_name(request()->rootUrl()).'/'.parse_name(request()->controller()).'/'.parse_name(request()->action());
+        $url = parse_name(request()->rootUrl()).DIRECTORY_SEPARATOR.parse_name(request()->controller()).DIRECTORY_SEPARATOR.parse_name(request()->action());
         $result = $this->field('pid,id')
             ->getByUrl($url);
         if(!$result){
