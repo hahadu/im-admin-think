@@ -10,6 +10,10 @@ class ErrorCode
     const SUCCESS = 200;
     /** 失败 */
     const FAIL = 10000;
+    /** 404 页面不存在  */
+    const PAGE_ERROR_NOT_FOUNT = 404;
+
+
 
     public function getErrorCodeMessage($code = self::FAIL){
         if($code == self::SUCCESS){
