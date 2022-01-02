@@ -4,6 +4,7 @@ namespace Hahadu\ThinkAdmin;
 
 use Closure;
 use Hahadu\Helper\HttpHelper;
+use Hahadu\ThinkAdmin\Layout\MessageBag;
 use Hahadu\ThinkAdmin\model\Users;
 use Hahadu\ThinkAdmin\Traits\ThinkAdminAssets;
 use Hahadu\ThinkAdmin\Layout\Content;
@@ -168,7 +169,6 @@ class Admin
 
         $links = [];
 
-
         foreach ($menu as $item) {
             if (!$item['_child']->isEmpty()) {
                 $links = array_merge($links, $this->menuLinks($item['_child']));
@@ -240,6 +240,19 @@ class Admin
         return HttpHelper::isValidUrl($path);
     }
 
+    /**
+     * Flash a message bag to session.
+     *
+     * @param string $title
+     * @param string $message
+     * @param string $type
+     */
+    public static function admin_info(string $title, string $message = '', string $type = 'info')
+    {
+        $message = new MessageBag(get_defined_vars());
+
+        session()->flash($type, $message);
+    }
 
 
 }

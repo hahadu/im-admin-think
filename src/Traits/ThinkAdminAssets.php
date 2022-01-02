@@ -73,7 +73,16 @@ trait ThinkAdminAssets
         THINK_ADMIN_BASE_RESOURCESPATH.'/toastr/build/toastr.min.css',
         THINK_ADMIN_BASE_RESOURCESPATH.'/bootstrap3-editable/css/bootstrap-editable.css',
         THINK_ADMIN_BASE_RESOURCESPATH.'/google-fonts/fonts.css',
-        THINK_ADMIN_BASE_RESOURCESPATH.'/AdminLTE/dist/css/AdminLTE.min.css',
+        THINK_ADMIN_BASE_RESOURCESPATH."/AdminLTE/dist/css/adminlte.min.css",
+        THINK_ADMIN_BASE_RESOURCESPATH.'/plugins/fontawesome-free/css/all.min.css',
+    //    "https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css",
+        THINK_ADMIN_BASE_RESOURCESPATH."/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css",
+        THINK_ADMIN_BASE_RESOURCESPATH."/plugins/icheck-bootstrap/icheck-bootstrap.min.css",
+        THINK_ADMIN_BASE_RESOURCESPATH."/plugins/jqvmap/jqvmap.min.css",
+        THINK_ADMIN_BASE_RESOURCESPATH."/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
+        THINK_ADMIN_BASE_RESOURCESPATH."/plugins/daterangepicker/daterangepicker.css",
+        THINK_ADMIN_BASE_RESOURCESPATH."/plugins/summernote/summernote-bs4.min.css",
+
     ];
 
     /**
@@ -89,7 +98,23 @@ trait ThinkAdminAssets
         THINK_ADMIN_BASE_RESOURCESPATH.'/toastr/build/toastr.min.js',
         THINK_ADMIN_BASE_RESOURCESPATH.'/bootstrap3-editable/js/bootstrap-editable.min.js',
         THINK_ADMIN_BASE_RESOURCESPATH.'/sweetalert2/dist/sweetalert2.min.js',
-        THINK_ADMIN_BASE_RESOURCESPATH.'/think-admin/think-admin.js',
+        THINK_ADMIN_BASE_RESOURCESPATH . '/think-admin/think-admin.js',
+        THINK_ADMIN_BASE_RESOURCESPATH . "/plugins/jquery-ui/jquery-ui.min.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/plugins/bootstrap/js/bootstrap.bundle.min.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/plugins/chart.js/Chart.min.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/plugins/sparklines/sparkline.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/plugins/jqvmap/jquery.vmap.min.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/plugins/jqvmap/maps/jquery.vmap.usa.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/plugins/jquery-knob/jquery.knob.min.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/plugins/moment/moment.min.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/plugins/daterangepicker/daterangepicker.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/plugins/summernote/summernote-bs4.min.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/AdminLTE/dist/js/adminlte.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/AdminLTE/dist/js/demo.js",
+        THINK_ADMIN_BASE_RESOURCESPATH . "/AdminLTE/dist/js/pages/dashboard.js",
+
     ];
 
     /**
@@ -330,10 +355,11 @@ trait ThinkAdminAssets
     }
 
     /**
-    /**
      * @param $component
+     * @param array $data
+     * @return string
      */
-    public static function component($component, $data = [])
+    public static function component($component, array $data = []): string
     {
         $string = View::fetch($component, $data);
 

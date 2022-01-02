@@ -1,4 +1,6 @@
 <?php
+
+use Hahadu\ThinkAdmin\Admin;
 use Hahadu\ThinkAdmin\Layout\MessageBag;
 use Hahadu\Helper\HttpHelper;
 const THINK_ADMIN_BASE_RESOURCESPATH = '/vendor/think-admin';
@@ -59,7 +61,7 @@ if (!function_exists('admin_warning')) {
      * @param string $title
      * @param string $message
      */
-    function admin_warning($title, $message = '')
+    function admin_warning(string $title, string $message = '')
     {
         admin_info($title, $message, 'warning');
     }
@@ -74,22 +76,32 @@ if (!function_exists('admin_info')) {
      * @param string $message
      * @param string $type
      */
-    function admin_info($title, $message = '', $type = 'info')
+    function admin_info(string $title, string $message = '', string $type = 'info')
     {
-        $message = new MessageBag(get_defined_vars());
-
-        session()->flash($type, $message);
+        Admin::admin_info($title,$message,$type);
     }
 }
 
 if(!function_exists('admin_resources')){
-    function admin_resources($path=''){
+    /**
+     * 模板资源路径
+     * @param string $path
+     * @return string
+     */
+    function admin_resources(string $path=''): string
+    {
         return dirname(__DIR__).DIRECTORY_SEPARATOR.'resources'.DIRECTORY_SEPARATOR. $path;
     }
 }
 
 if(!function_exists('admin_view_path')){
-    function admin_view_path($path=''){
+    /**
+     * 获取admin模板文件路径
+     * @param string $path
+     * @return string
+     */
+    function admin_view_path(string $path=''): string
+    {
 
         $str = '';
         foreach (explode('.', $path) as $v){
@@ -107,7 +119,7 @@ if (!function_exists('admin_base_path')) {
      *
      * @return string
      */
-    function admin_base_path($path = '')
+    function admin_base_path(string $path = ''): string
     {
         $prefix = '/'.trim(config('admin.route.prefix'), '/');
 
@@ -131,7 +143,7 @@ if (!function_exists('admin_path')) {
      *
      * @return string
      */
-    function admin_path($path = '')
+    function admin_path(string $path = ''): string
     {
         return ucfirst(config('admin.directory')).($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
@@ -147,7 +159,7 @@ if (!function_exists('admin_url')) {
      *
      * @return string
      */
-    function admin_url($path = '', $parameters = [], $secure = null)
+    function admin_url(string $path = '', $parameters = [], $secure = null): string
     {
         if (HttpHelper::isValidUrl($path)) {
             return $path;
@@ -168,7 +180,7 @@ if (!function_exists('admin_trans')) {
      * @param string $lang
      * @return string|null
      */
-    function admin_trans(string $name = null, array $vars = [], string $lang = '')
+    function admin_trans(string $name = null, array $vars = [], string $lang = ''): ?string
     {
         $line = __($name, $vars, $lang);
 
